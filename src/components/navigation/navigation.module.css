@@ -1,0 +1,235 @@
+.navContainer {
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  /* z-index: 100; */
+  box-shadow: 0 0 2px #5c5c5c;
+  /* margin: 0 0 20px 0; */
+}
+
+.navbar {
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebarOpen {
+  color: #000;
+  font-size: 25px;
+  padding: 15px 5px 5px 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo p {
+  color: #000;
+  font-family: "Inria Serif", serif;
+  font-weight: 800;
+}
+
+.logoToggle {
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks li {
+  margin: 0 5px;
+  list-style: none;
+}
+
+.navLinks li a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navLinks li a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #646464;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.navLinks li:hover a::before {
+  opacity: 1;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchToggle {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+
+.searchToggle svg {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #000;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.searchToggle .cancel {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.searchToggle.active .cancel {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.searchToggle.active .search {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.searchBox .searchField {
+  position: absolute;
+  bottom: -85px;
+  right: 5px;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: #858585;
+  padding: 3px;
+  border-radius: 6px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.searchToggle.active~.searchField {
+  bottom: -74px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.searchField::before {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: -4px;
+  height: 12px;
+  width: 12px;
+  background-color: #858585;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+.searchField input {
+  height: 100%;
+  width: 100%;
+  padding: 0 45px 0 15px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #010718;
+  background-color: #F2F2F2;
+}
+
+.searchField svg {
+  position: absolute;
+  color: #858585;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 790px) {
+  .sidebarOpen {
+    display: block;
+  }
+
+  .active .navLogo a {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .active .navLogo p {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .menu {
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    left: -100%;
+    top: 0;
+    padding: 20px;
+    background-color: #f3f3f3;
+    z-index: 100;
+    transition: all 0.4s ease;
+  }
+
+  .active .menu {
+    left: -0%;
+  }
+
+  .logoToggle {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .siderbarClose {
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .navLinks li a {
+    display: block;
+    margin-top: 20px;
+  }
+}

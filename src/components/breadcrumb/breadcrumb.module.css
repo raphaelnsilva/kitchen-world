@@ -1,0 +1,17 @@
+.containerClasses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 0.9rem;
+  background-color: #00000008;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+
+.activeClasses a {
+  color: var(--green);
+  font-weight: 600;
+}
