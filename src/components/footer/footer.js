@@ -17,9 +17,9 @@ export default function Footer() {
         </div>
         <ul className={styles.navList}>
           <Link href='/'><li className={styles.navLinks}>Página inicial</li></Link>
-          <Link href='/posts'><li className={styles.navLinks}>Receitas</li></Link>
-          <Link href='/about'><li className={styles.navLinks}>Categorias</li></Link>
-          <Link href='/contact'><li className={styles.navLinks}>Sobre nós</li></Link>
+          <Link href='/receitas'><li className={styles.navLinks}>Receitas</li></Link>
+          {/* <Link href='/sobre'><li className={styles.navLinks}>Categorias</li></Link> */}
+          <Link href='/sobre'><li className={styles.navLinks}>Sobre nós</li></Link>
         </ul>
       </div>
       <div className={styles.terms}>

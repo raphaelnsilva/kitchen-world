@@ -36,25 +36,25 @@ export default async function Home() {
               <p>Bebidas</p>
             </div>
           </Link>
-          <Link href='/categorias?query=bebidas'>
+          <Link href='/categorias?query=receitas%20salgadas'>
             <div className={styles.categoryCard}>
               <Image src='/salgados.jpeg' width={120} height={120} alt='café'/>
               <p>Receitas salgadas</p>
             </div>
           </Link>
-          <Link href='/categorias?query=bebidas'>
+          <Link href='/categorias?query=receitas%20doces'>
             <div className={styles.categoryCard}>
               <Image src='/doces.jpeg' width={120} height={120} alt='café'/>
               <p>Receitas doces</p>
             </div>
           </Link>
-          <Link href='/categorias?query=bebidas'>
+          <Link href='/categorias?query=caldos'>
             <div className={styles.categoryCard}>
               <Image src='/caldos.webp' width={120} height={120} alt='café'/>
               <p>Caldos</p>
             </div>
           </Link>
-          <Link href='/categorias?query=bebidas'>
+          <Link href='/categorias?query=dicas'>
             <div className={styles.categoryCard}>
               <Image src='/dicas.webp' width={120} height={120} alt='café'/>
               <p>Dicas</p>

@@ -53,8 +53,8 @@ export default function Navigation() {
             <ul className={styles.navLinks}>
               <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Página inicial</Link></li>
               <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/receitas'>Receitas</Link></li>
-              {/* <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Categorias</Link></li>
-              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/about'>Sobre nós</Link></li> */}
+              {/* <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Categorias</Link></li> */}
+              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/sobre'>Sobre nós</Link></li>
             </ul>
           </div>
           <div className={styles.searchBox}>

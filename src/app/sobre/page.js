@@ -37,20 +37,6 @@ export default function About() {
         por fazer parte dessa jornada e esperamos que encontre nosso blog uma
         fonte valiosa de inspiração culinária.
       </p>
-      <h1>Continue explorando nossas receitas</h1>
-      <div className={styles.navContainer}>
-        <h1>
-          As melhores receitas <br /> em um só lugar
-        </h1>
-        <ul className={styles.linksList}>
-          <Link href='/' className={styles.postLink}>
-            Ver últimas receitas
-          </Link>
-          <Link href='/contact' className={styles.aboutLink}>
-            Nossos contatos
-          </Link>
-        </ul>
-      </div>
     </section>
   )
 }

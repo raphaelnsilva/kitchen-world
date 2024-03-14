@@ -1,5 +1,5 @@
 .navContainer {
-  max-width: 500px;
+  width: 80%;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,8 @@
   gap: 10px;
 }
 .aboutContainer {
-  margin: 2rem 0;
+  width: 80%;
+  margin: 3rem auto;
 }
 
 .aboutContainer p {
