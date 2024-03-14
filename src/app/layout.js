@@ -2,7 +2,7 @@ import './globals.css'
 import Footer from '../components/footer/footer'
 import Breadcrumb from '../components/breadcrumb/breadcrumb'
 import Navigation from '../components/navigation/navigation'
-import { IoMdArrowDropright } from "react-icons/io";
+import Script from 'next/script'
 
 export const metadata = {
   title: 'Mundo Da Cozinha',
@@ -12,6 +12,14 @@ export const metadata = {
 export default async function RootLayout({children}) {
   return (
     <html lang='pt-br'>
+      <head>
+      <Script 
+        async 
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9396204168733715"
+        crossOrigin="anonymous" 
+        strategy="lazyOnload"
+      />
+      </head>
       <body suppressHydrationWarning={true}>
         <Navigation />
         <main>

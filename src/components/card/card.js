@@ -6,7 +6,7 @@ export default function Card(props) {
   const article = props.data
   
   return (
-    <Link className={styles.cardLink} key={article.slug} href={`/receitas/${article.slug}`}>
+    <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
       <Image data={article.postImage.responsiveImage} />
       <div className={styles.cardContent}>
         <p className={styles.category}>{article.category}</p>

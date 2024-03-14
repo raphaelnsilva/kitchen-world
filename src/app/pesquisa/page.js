@@ -50,7 +50,7 @@ export default async function Search({searchParams}) {
         </div>
       ) : (
         <div className={styles.posts}>
-          {articles.map((article) => <Card data={article} />)}
+          {articles.map((article) => <Card key={article.slug} data={article} />)}
         </div>
       )}
     </>

@@ -42,7 +42,7 @@ export default async function Category({ searchParams }) {
     <section className={styles.categoryContainer}>
       <h1 className={styles.header}>Categoria: {category}</h1>
       <div className={styles.posts}>
-        {articles.map((article) => <Card data={article} />)}
+        {articles.map((article) => <Card key={article.slug} data={article} />)}
       </div>
     </section>
   )

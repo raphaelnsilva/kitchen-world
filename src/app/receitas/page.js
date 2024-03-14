@@ -27,7 +27,7 @@ export default async function Receitas() {
         <p>Aqui estão nossas receitas mais especiais, elaboradas e testadas para ajudá-lo a preparar uma excelente refeição em família.</p>
       </div>
       <div className={styles.section}>
-        {articles.map((article) => <Card data={article}/>)}
+        {articles.map((article) => <Card key={article.slug} data={article}/>)}
       </div>
     </section>
   )
