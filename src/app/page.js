@@ -18,7 +18,7 @@ export default async function Home() {
           <br />
           <p>Bem-vindo(a) ao nosso blog! Aqui, você encontrará um mundo delicioso de sabores, texturas e aromas.</p>
         </div>
-        <Link href='/receitas/deliciosa-receita-de-bolo-de-cenoura-com-cobertura-de-chocolate-para-surpreender' className={styles.btn}>Ver receitas <IoIosArrowForward /></Link>
+        <Link href='/receitas' className={styles.btn}>Ver receitas <IoIosArrowForward /></Link>
       </section>
       <section className={styles.homeCategories}>
         
