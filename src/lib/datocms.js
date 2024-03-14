@@ -4,15 +4,14 @@ const dedupedFetch = async (serializedInit) => {
     JSON.parse(serializedInit)
   )
   const responseBody = await response.json()
+
   if (!response.ok) {
-    throw new Error(
-      `${response.status} ${response.statusText}: ${JSON.stringify(
-        responseBody
-      )}`
-    )
+    throw new Error(`${response.status} ${response.statusText}: ${JSON.stringify(responseBody)}`)
   }
+
   return responseBody
 }
+
 export async function performRequest({ query, variables = {}, includeDrafts = false, excludeInvalid = false, visualEditingBaseUrl, revalidate }) {
   const body = { query, variables, revalidate }
 
