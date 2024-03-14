@@ -1,34 +1,33 @@
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-import Cards from '../../components/cards/page'
+import Card from '../../components/card/card'
+
 
 export const metadata = {
-  title: 'Posts | Mundo Da Cozinha',
+  title: 'Receitas | Mundo Da Cozinha',
   description: ''
 }
 
 async function getData() {
   const res = await performRequest({
     query: POSTS_PAGE,
-    revalidate: 8000,
+    revalidate: 60,
     visualEditingBaseUrl: false
   })
   return res.allArticles;
 }
 
-export default async function Posts() {
+export default async function Receitas() {
   const articles = await getData()
 
   return (
     <section className={styles.article}>
-      <h1 className={styles.header}>Todas as receitas</h1>
-
+      <div className={styles.header}>
+        <h1>Todas as receitas</h1>
+        <p>Aqui estão nossas receitas mais especiais, elaboradas e testadas para ajudá-lo a preparar uma excelente refeição em família.</p>
+      </div>
       <div className={styles.section}>
-        {articles.map((article) => (
-          <>
-            <Cards data={article} />
-          </>
-        ))}
+        {articles.map((article) => <Card data={article}/>)}
       </div>
     </section>
   )

@@ -18,7 +18,7 @@ export default async function Home() {
           <br />
           <p>Bem-vindo(a) ao nosso blog! Aqui, você encontrará um mundo delicioso de sabores, texturas e aromas.</p>
         </div>
-        <Link href='/posts' className={styles.btn}>Ver receitas <IoIosArrowForward /></Link>
+        <Link href='/receitas/deliciosa-receita-de-bolo-de-cenoura-com-cobertura-de-chocolate-para-surpreender' className={styles.btn}>Ver receitas <IoIosArrowForward /></Link>
       </section>
       <section className={styles.homeCategories}>
         
@@ -30,31 +30,31 @@ export default async function Home() {
         
         
         <div className={styles.categoryCards}>
-          <Link href='/categoria?query=bebidas'>
+          <Link href='/categorias?query=bebidas'>
             <div className={styles.categoryCard}>
               <Image src='/bebidas.jpeg' width={120} height={120} alt='café'/>
               <p>Bebidas</p>
             </div>
           </Link>
-          <Link href='/categoria?query=bebidas'>
+          <Link href='/categorias?query=bebidas'>
             <div className={styles.categoryCard}>
               <Image src='/salgados.jpeg' width={120} height={120} alt='café'/>
               <p>Receitas salgadas</p>
             </div>
           </Link>
-          <Link href='/categoria?query=bebidas'>
+          <Link href='/categorias?query=bebidas'>
             <div className={styles.categoryCard}>
               <Image src='/doces.jpeg' width={120} height={120} alt='café'/>
               <p>Receitas doces</p>
             </div>
           </Link>
-          <Link href='/categoria?query=bebidas'>
+          <Link href='/categorias?query=bebidas'>
             <div className={styles.categoryCard}>
               <Image src='/caldos.webp' width={120} height={120} alt='café'/>
               <p>Caldos</p>
             </div>
           </Link>
-          <Link href='/categoria?query=bebidas'>
+          <Link href='/categorias?query=bebidas'>
             <div className={styles.categoryCard}>
               <Image src='/dicas.webp' width={120} height={120} alt='café'/>
               <p>Dicas</p>

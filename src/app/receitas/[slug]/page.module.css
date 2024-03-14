@@ -1,0 +1,62 @@
+.postContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: auto;
+}
+
+.postTitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.postCategory {
+  color: #bd6f0a;
+  font-weight: 500;
+}
+
+.postContent p {
+  line-height: 2rem;
+}
+
+.postDate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #9b9b9b;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.postDate path {
+  color: #9b9b9b;
+}
+
+
+
+.postCategory p {
+  padding: 0;
+}
+
+@media (min-width: 500px) {
+  .postImageContainer {
+    box-shadow: 0 0 1px #494949;
+  }
+
+  .postImage {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 800px) {
+  .postDate {
+    font-size: 16px;
+  }
+
+  .postTitle {
+    font-size: 20px;
+  }
+}

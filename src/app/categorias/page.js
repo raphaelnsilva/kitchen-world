@@ -1,10 +1,7 @@
 
+import Card from '@/components/card/card'
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-import Link from 'next/link'
-import { Image } from 'react-datocms'
-import { FaRegCalendarAlt } from 'react-icons/fa'
-
 
 export default async function Category({ searchParams }) {
   const category = searchParams.query 
@@ -42,23 +39,11 @@ export default async function Category({ searchParams }) {
   const articles = response.allArticles
 
   return (
-    <article className={styles.categoryContainer}>
+    <section className={styles.categoryContainer}>
       <h1 className={styles.header}>Categoria: {category}</h1>
-      <section className={styles.lastsPosts}>
-        {articles.map((article) => (
-          <Link className={styles.cardLink} key={article.slug} href={`/posts/${article.slug}`}>
-            <Image data={article.postImage.responsiveImage} />
-            <div className={styles.cardContent}>
-              <span className={styles.category}>{article.category}</span>
-              <h1 className={styles.cardTitle}>{article.title}</h1>
-              <span className={styles.publishData}>
-                <FaRegCalendarAlt />
-                Publicado em: {article.publishDate}
-              </span>
-            </div>
-          </Link>
-        ))}
-      </section>
-    </article>
+      <div className={styles.posts}>
+        {articles.map((article) => <Card data={article} />)}
+      </div>
+    </section>
   )
 }

@@ -25,7 +25,7 @@ export default function Navigation() {
     if (!searchQuery) {
       router.push('/')
     } else {
-      router.push(`/search?query=${searchQuery}`)
+      router.push(`/pesquisa?query=${searchQuery}`)
     }
   }, [router, searchQuery])
 
@@ -52,14 +52,14 @@ export default function Navigation() {
             </div>
             <ul className={styles.navLinks}>
               <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Página inicial</Link></li>
-              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/posts'>Receitas</Link></li>
+              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/receitas'>Receitas</Link></li>
               {/* <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Categorias</Link></li>
               <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/about'>Sobre nós</Link></li> */}
             </ul>
           </div>
           <div className={styles.searchBox}>
             <div className={`${styles.searchToggle} ${isSearchOpen ? styles.active : styles.searchToggle}`} onClick={toggleSearch}>
-              <div className={styles.cancel} onClick={() => setSearchQuery('')}><IoCloseSharp /></div>
+              <div className={styles.cancel}><IoCloseSharp /></div>
               <div className={styles.search}><IoSearch /></div>
             </div>
             <div className={styles.searchField}>

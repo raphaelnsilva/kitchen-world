@@ -1,9 +1,7 @@
 import { performRequest } from '../../lib/datocms'
-import Link from 'next/link'
 import styles from './page.module.css'
-import { Image } from 'react-datocms'
-import { FaRegCalendarAlt } from 'react-icons/fa'
 import { BiSolidMessageAltError } from 'react-icons/bi'
+import Card from '@/components/card/card'
 
 export const metadata = {
   title: 'Pesquisa'
@@ -47,31 +45,13 @@ export default async function Search({searchParams}) {
   return (
     <>
       {articles.length === 0 ? (
-        <section className={styles.errorMessage}>
-          <BiSolidMessageAltError />
+        <div className={styles.errorMessage}>
           <h1>Desculpe, não encotramos sua pesquisa =( </h1>
-        </section>
+        </div>
       ) : (
-        <section className={styles.lastsPosts}>
-          {articles.map((article) => (
-            <Link
-              className={styles.cardLink}
-              key={article.slug}
-              href={`/posts/${article.slug}`}
-            >
-              {/* eslint-disable-next-line jsx-a11y/alt-text */}
-              <Image data={article.postImage.responsiveImage} />
-              <div className={styles.cardContent}>
-                <span className={styles.category}>{article.category}</span>
-                <h1 className={styles.cardTitle}>{article.title}</h1>
-                <span className={styles.publishData}>
-                  <FaRegCalendarAlt />
-                  Publicado em: {article.publishDate}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </section>
+        <div className={styles.posts}>
+          {articles.map((article) => <Card data={article} />)}
+        </div>
       )}
     </>
   )

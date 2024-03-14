@@ -2,6 +2,7 @@ import './globals.css'
 import Footer from '../components/footer/footer'
 import Breadcrumb from '../components/breadcrumb/breadcrumb'
 import Navigation from '../components/navigation/navigation'
+import { IoMdArrowDropright } from "react-icons/io";
 
 export const metadata = {
   title: 'Mundo Da Cozinha',

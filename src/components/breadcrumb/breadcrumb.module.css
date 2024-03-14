@@ -1,6 +1,6 @@
 .containerClasses {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  /* flex-wrap: wrap; */
   gap: 0.5rem;
   list-style: none;
   font-size: 0.9rem;
@@ -8,8 +8,11 @@
   width: 80%;
   margin: 10px auto;
   padding: 10px;
-}
 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .activeClasses a {
   color: var(--green);

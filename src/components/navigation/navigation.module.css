@@ -1,13 +1,8 @@
 .navContainer {
-  /* position: fixed;
-  top: 0;
-  left: 0; */
   height: 70px;
   width: 100%;
   background-color: #fff;
-  /* z-index: 100; */
   box-shadow: 0 0 2px #5c5c5c;
-  /* margin: 0 0 20px 0; */
 }
 
 .navbar {
@@ -122,7 +117,7 @@
   pointer-events: none;
 }
 
-.searchBox .searchField {
+.searchField {
   position: absolute;
   bottom: -85px;
   right: 5px;
@@ -130,7 +125,7 @@
   width: 300px;
   display: flex;
   align-items: center;
-  background-color: #858585;
+  background-color: #00b882;
   padding: 3px;
   border-radius: 6px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -152,7 +147,7 @@
   top: -4px;
   height: 12px;
   width: 12px;
-  background-color: #858585;
+  background-color: #00b882;
   transform: rotate(-45deg);
   z-index: -1;
 }
@@ -167,12 +162,12 @@
   font-size: 14px;
   font-weight: 400;
   color: #010718;
-  background-color: #F2F2F2;
+  background-color: #ffffff;
 }
 
 .searchField svg {
   position: absolute;
-  color: #858585;
+  color: #00b882;
   right: 15px;
   font-size: 22px;
   cursor: pointer;

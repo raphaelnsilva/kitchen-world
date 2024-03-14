@@ -22,12 +22,10 @@ export default function Breadcrumb({ homeElement, separator, capitalizeLinks }) 
             const itemLink = capitalizeLinks ? link[0] + link.slice(1, link.length) : link;
 
             return (
-              <>
-                <span key={index} className={itemClasses}>
-                  <Link key={index} className={itemClasses} href={href}>{itemLink}</Link>
-                </span>
+              <span key={index} className={itemClasses}>
+                <Link key={index} className={itemClasses} href={href}>{itemLink}</Link>
                 {pathNamesReplaced.length !== index + 1 && separator}
-              </>
+              </span>
             )
           })}
         </div>
