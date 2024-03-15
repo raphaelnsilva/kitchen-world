@@ -24,7 +24,7 @@ export default async function RootLayout({children}) {
       />
       </head>
       <Suspense>
-        <GoogleAnalytics GA_MEASUREMENT_ID='G-KD5ZJ7CY27'/>
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-MV5F2RCCKR'/>
       </Suspense>
       <body suppressHydrationWarning={true}>
         <Navigation />
