@@ -3,7 +3,7 @@ import Card from '@/components/card/card'
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
 
-export default async function Category({ searchParams }) {
+export default async function Categoria({searchParams}) {
   const category = searchParams.query 
 
   const CATEGORY_QUERY = `

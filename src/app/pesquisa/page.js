@@ -1,13 +1,12 @@
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-import { BiSolidMessageAltError } from 'react-icons/bi'
 import Card from '@/components/card/card'
 
 export const metadata = {
   title: 'Pesquisa'
 }
 
-export default async function Search({searchParams}) {
+export default async function Pesquisa({searchParams}) {
   const search = searchParams.query 
 
   const FILTER_QUERY = `

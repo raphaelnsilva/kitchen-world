@@ -1,11 +1,10 @@
 import styles from './page.module.css'
-import Link from 'next/link'
 
 export const metadata = {
   title: 'Sobre nós | Mundo Da Cozinha'
 }
 
-export default function About() {
+export default function Sobre() {
   return (
     <section className={styles.aboutContainer}>
       <h1>Sobre nosso Blog</h1>

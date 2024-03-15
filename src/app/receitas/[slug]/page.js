@@ -8,7 +8,7 @@ export const metadata = {
   title: `Post | Receitas da dona Maria`
 }
 
-export default async function Receitas({ params }) {
+export default async function Receita({params}) {
   const ARTICLE_QUERY = `
     query Query {
       article(filter: {slug: {eq: "${params.slug}"}}) {
