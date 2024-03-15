@@ -3,6 +3,8 @@ import Footer from '../components/footer/footer'
 import Breadcrumb from '../components/breadcrumb/breadcrumb'
 import Navigation from '../components/navigation/navigation'
 import Script from 'next/script'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
+import CookieBanner from '@/components/cookieBanner/cookieBanner'
 
 export const metadata = {
   title: 'Mundo Da Cozinha',
@@ -20,6 +22,7 @@ export default async function RootLayout({children}) {
         strategy="lazyOnload"
       />
       </head>
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-KD5ZJ7CY27'/>
       <body suppressHydrationWarning={true}>
         <Navigation />
         <main>
@@ -27,6 +30,7 @@ export default async function RootLayout({children}) {
           {children}
         </main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )
