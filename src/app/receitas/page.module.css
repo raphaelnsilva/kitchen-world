@@ -1,16 +1,15 @@
-.section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  width: 80%;
-  margin: auto;
-}
-
 .header {
-  width: 80%;
+  width: 90%;
+  max-width: 1000px;
   margin: auto;
   padding: 20px 0;
   text-align: center;
+}
+
+.header h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 35px;
+  color: #282728;
 }
 
 .header p {
@@ -19,18 +18,13 @@
   margin: 15px 0;
 }
 
-.header h1 {
-  font-family: "Inria Serif", serif;
-  font-size: 30px;
-  color: #282728;
-}
-
-.loading {
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 7.5;
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 @media(min-width: 600px) {
@@ -42,5 +36,121 @@
 @media(min-width: 900px) {
   .section {
     grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+
+.category {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ad620d;
+  margin: 0 0 10px 0;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Frank Ruhl Libre", serif;
+}
+
+.cardTitle:hover {
+  
+}
+
+.cardLink {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.cardLink img {
+  border-radius: 4px 4px 0 0;
+}
+
+
+.cardContent {
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+/* -------- */
+/* SKELETON */
+/* -------- */
+
+.skeleton {
+  border-radius: 0.25rem;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeletonHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.skeletonHeaderTitle {
+  width: 260px;
+  height: 46px;
+}
+
+.skeletonHeaderDescription1 {
+  max-width: 1000px;
+  width: 90%;
+  height: 16px;
+  margin: 20px 0 5px 0;
+}
+
+.skeletonHeaderDescription2 {
+  max-width: 1000px;
+  width: 90%;
+  height: 16px;
+  margin: 5px 0;
+}
+
+.skeletonHeaderDescription3 {
+  max-width: 1000px;
+  width: 90%;
+  height: 16px;
+  margin: 5px 0 15px 0;
+}
+
+.skeletonCardImg {
+  height: 150px;
+  border-radius: 4px 4px 0 0;
+}
+
+.skeletonCardCategory {
+  width: 100px;
+  height: 21px;
+  margin: 0 0 10px 0;
+}
+
+.skeletonCardTitle {
+  height: 21px;
+  width: 100%;
+  margin-bottom: 3px ;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+@media (min-width: 530px) {
+  .skeletonHeaderDescription3 {
+    display: none;
+  }
+}
+
+@media (min-width: 1010px) {
+  .skeletonHeaderDescription2 {
+    display: none;
   }
 }

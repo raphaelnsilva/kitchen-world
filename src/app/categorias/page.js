@@ -1,7 +1,7 @@
-
-import Card from '@/components/card/card'
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
+import Link from 'next/link'
+import { Image } from 'react-datocms'
 
 export default async function Categoria({searchParams}) {
   const category = searchParams.query 
@@ -39,11 +39,22 @@ export default async function Categoria({searchParams}) {
   const articles = response.allArticles
 
   return (
-    <section className={styles.categoryContainer}>
-      <h1 className={styles.header}>Categoria: {category}</h1>
-      <div className={styles.posts}>
-        {articles.map((article) => <Card key={article.slug} data={article} />)}
+    <>
+      <div className={styles.header}>
+        <h1>Categoria: <span style={{ color: '#00b882', fontSize: '30px'}}>{category}</span></h1>
+        <p>Aqui estão todas as receitas da categoria selecionada.</p>
       </div>
-    </section>
+      <div className={styles.posts}>
+        {articles.map((article) => (
+          <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+            <Image data={article.postImage.responsiveImage} />
+            <div className={styles.cardContent}>
+              <p className={styles.category}>{article.category}</p>
+              <h1 className={styles.cardTitle}>{article.title}</h1>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </>
   )
 }

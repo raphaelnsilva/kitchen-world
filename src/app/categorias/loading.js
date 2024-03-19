@@ -6,12 +6,10 @@ export default function Loading() {
     <>
       <div className={styles.skeletonHeader}>
         <div className={`${styles.skeleton} ${styles.skeletonHeaderTitle}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonHeaderDescription1}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonHeaderDescription2}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonHeaderDescription3}`}></div>
+        <div className={`${styles.skeleton} ${styles.skeletonHeaderDescription}`}></div>
       </div>
 
-      <div className={styles.section}>
+      <div className={styles.posts}>
         {[... new Array(18)].map((index) => (
 
           <div key={index} className={styles.cardLink}>

@@ -5,7 +5,7 @@ import { Image, StructuredText } from 'react-datocms'
 import { DateTime } from 'luxon'
 
 export const metadata = {
-  title: `Post | Receitas da dona Maria`
+  title: `Receitas | Mundo da Cozinha`
 }
 
 export default async function Receita({params}) {
@@ -66,22 +66,26 @@ export default async function Receita({params}) {
   const currentData = data.toFormat('dd/MM/yyyy')
 
   return (
-    <article className={styles.postContent}>
+    <article className={styles.postContainer}>
       <h1 className={styles.postTitle}>{article.title}</h1>
 
       <p className={styles.postCategory}>{article.category}</p>
-
-      <div className={styles.postImageContainer}>
-        <div className={styles.postImage}>
-          <Image data={article.postImage.responsiveImage} />
-        </div>
-      </div>
 
       <div className={styles.postDate}>
         <FaRegCalendarAlt />
         Publicado em: {currentData}
       </div>
-      <StructuredText data={article.content} renderBlock={({ record }) => <Image data={record.image.responsiveImage} />} />
+      
+      <div className={styles.postImage}>
+        <Image data={article.postImage.responsiveImage} />
+      </div>
+
+      <div className={styles.postContent}>
+        <StructuredText 
+          data={article.content} 
+          renderBlock={({ record }) => <Image data={record.image.responsiveImage} />} 
+        />
+      </div>
     </article>
   )
 }

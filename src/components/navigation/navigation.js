@@ -51,10 +51,12 @@ export default function Navigation() {
               <div className={styles.siderbarClose} onClick={toggleMenu}><IoCloseSharp /></div>
             </div>
             <ul className={styles.navLinks}>
-              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Página inicial</Link></li>
+              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Home</Link></li>
               <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/receitas'>Receitas</Link></li>
               {/* <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/'>Categorias</Link></li> */}
-              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/sobre'>Sobre nós</Link></li>
+              {/* <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/categorias?query=dicas'>Categorias</Link></li> */}
+              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/sobre'>Sobre nos</Link></li>
+              <li onClick={() => setIsMenuOpen(!isMenuOpen)}><Link href='/contato'>Contato</Link></li>
             </ul>
           </div>
           <div className={styles.searchBox}>

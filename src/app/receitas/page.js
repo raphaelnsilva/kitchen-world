@@ -1,17 +1,15 @@
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-import Card from '../../components/card/card'
+// import Card from '../../components/card/card'
+import Link from 'next/link'
+import { Image } from 'react-datocms'
 
-
-export const metadata = {
-  title: 'Receitas | Mundo Da Cozinha',
-  description: ''
-}
+export const metadata = { title: 'Receitas | Mundo Da Cozinha' }
 
 async function getData() {
   const res = await performRequest({
     query: POSTS_PAGE,
-    revalidate: 60,
+    revalidate: 80000,
     visualEditingBaseUrl: false
   })
   return res.allArticles;
@@ -20,16 +18,30 @@ async function getData() {
 export default async function Receitas() {
   const articles = await getData()
 
+  // const articles = await new Promise((resolve) => {
+  //   setTimeout(async () => {
+  //     resolve(await getData());
+  //   }, 3000);
+  // });
+
   return (
-    <section className={styles.article}>
+    <>
       <div className={styles.header}>
         <h1>Todas as receitas</h1>
         <p>Aqui estão nossas receitas mais especiais, elaboradas e testadas para ajudá-lo a preparar uma excelente refeição em família.</p>
       </div>
       <div className={styles.section}>
-        {articles.map((article) => <Card key={article.slug} data={article}/>)}
+        {articles.map((article) => (
+          <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+            <Image data={article.postImage.responsiveImage} />
+            <div className={styles.cardContent}>
+              <p className={styles.category}>{article.category}</p>
+              <h1 className={styles.cardTitle}>{article.title}</h1>
+            </div>
+          </Link>
+        ))}
       </div>
-    </section>
+    </>
   )
 }
 

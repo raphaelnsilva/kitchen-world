@@ -1,6 +1,7 @@
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-import Card from '@/components/card/card'
+import Link from 'next/link'
+import { Image } from 'react-datocms'
 
 export const metadata = {
   title: 'Pesquisa'
@@ -43,13 +44,25 @@ export default async function Pesquisa({searchParams}) {
 
   return (
     <>
+      <header className={styles.header}>
+        <h1>Pesquisa: <span style={{ color: '#00b882'}}>{search}</span></h1>
+        {articles.length === 0 ? '' : <p>Aqui estão todos os resultados para a sua pesquisa "{search}"</p>}
+      </header>
       {articles.length === 0 ? (
         <div className={styles.errorMessage}>
-          <h1>Desculpe, não encotramos sua pesquisa =( </h1>
+          <h1>Desculpe, não encotramos nada para "{search}" =( </h1>
         </div>
       ) : (
         <div className={styles.posts}>
-          {articles.map((article) => <Card key={article.slug} data={article} />)}
+          {articles.map((article) => (
+            <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+              <Image data={article.postImage.responsiveImage} />
+              <div className={styles.cardContent}>
+                <p className={styles.category}>{article.category}</p>
+                <h1 className={styles.cardTitle}>{article.title}</h1>
+              </div>
+            </Link>
+          ))}
         </div>
       )}
     </>

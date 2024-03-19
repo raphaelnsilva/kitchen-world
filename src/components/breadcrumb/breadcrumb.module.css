@@ -5,7 +5,8 @@
   list-style: none;
   font-size: 0.9rem;
   background-color: #00000008;
-  width: 80%;
+  max-width: 1000px;
+  width: 90%;
   margin: 10px auto;
   padding: 10px;
 

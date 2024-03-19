@@ -19,13 +19,13 @@
   margin: 0 50px;
   padding: 30px 20px;
   /* border-bottom: 1px solid #ffffff54; */
-  background-color: #00000062;
+  background-color: #00000081;
 }
 
 .homeContent h1 {
-  font-size: 25px;
-  font-family: "Inria Serif", serif;
-  font-weight: 600;
+  font-size: 35px;
+  font-family: "Frank Ruhl Libre", serif;
+
 }
 
 .homeContent p {
@@ -45,8 +45,6 @@
 }
 
 .homeCategories {
-  /* height: 60vh; */
-
   text-align: center;
   color: #282728;
   padding: 20px 0;
@@ -57,7 +55,9 @@
 }
 
 .categoryContent h1 {
-  font-family: "Inria Serif", serif;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 35px;
+
 }
 
 .categoryCards {
