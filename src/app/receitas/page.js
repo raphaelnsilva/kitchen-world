@@ -8,7 +8,7 @@ export const metadata = { title: 'Receitas | Mundo Da Cozinha' }
 async function getData() {
   const res = await performRequest({
     query: POSTS_PAGE,
-    revalidate: 80000,
+    revalidate: 10000,
     visualEditingBaseUrl: false
   })
   return res.allArticles;
