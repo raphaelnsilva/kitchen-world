@@ -1,10 +1,11 @@
 .homeContainer {
   height: 60vh;
-  background-image: url("/home2.jpeg");
+  background-image: url("/home.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: #797979;
+  box-shadow: inset 0px 0px 200px rgb(0 0 0);
 
   display: flex;
   align-items: center;
@@ -18,24 +19,24 @@
   color: #fff;
   margin: 0 50px;
   padding: 30px 20px;
-  /* border-bottom: 1px solid #ffffff54; */
-  background-color: #00000081;
+  background-color: #0000007a;
 }
 
 .homeContent h1 {
   font-size: 35px;
   font-family: "Frank Ruhl Libre", serif;
-
+  text-shadow: 1px 1px 3px #000;
 }
 
 .homeContent p {
   font-weight: 300;
+  text-shadow: 1px 1px 3px #000;
 }
 
 .btn {
   border: none;
   border-radius: 50px;
-  background-color: var(--green);
+  background-color: #2da37b;
   padding: 10px 15px;
   color: #fff;
 
@@ -44,10 +45,22 @@
   gap: 10px;
 }
 
+.btn:hover {
+  color: #ffffff;
+  background-color: #55bb99;
+  transition: all 0.3s ease;
+}
+
 .homeCategories {
   text-align: center;
   color: #282728;
   padding: 20px 0;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+.home {
+  background-color: #020C09;
 }
 
 .categoryContent {
@@ -69,8 +82,10 @@
   margin: 50px 0;
 }
 
+
+
 .categoryCard {
-  box-shadow: 1px 1px 3px #0000004b;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 10px;
   height: 200px;
   width: 170px;
@@ -80,6 +95,11 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.categoryCard:hover {
+  background-color: #cdd6df;
+  transition: all 0.3s ease;
 }
 
 .categoryCard img {

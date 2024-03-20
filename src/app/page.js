@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import { IoIosArrowForward } from "react-icons/io";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,15 +11,16 @@ export const metadata = {
 export default async function Home() {
 
   return (
-    <>
+    <div className={styles.home}>
       <section className={styles.homeContainer}>
         <div className={styles.homeContent}>
           <h1>Receitas e dicas culinárias</h1>
           <br />
           <p>Bem-vindo(a) ao nosso blog! Aqui, você encontrará um mundo delicioso de sabores, texturas e aromas.</p>
         </div>
-        <Link href='/receitas' className={styles.btn}>Ver receitas <IoIosArrowForward /></Link>
+        <Link href='/receitas' className={styles.btn}>Ver receitas <FaArrowRightToBracket /></Link>
       </section>
+
       <section className={styles.homeCategories}>
         
         <div className={styles.categoryContent}>
@@ -62,6 +63,6 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }

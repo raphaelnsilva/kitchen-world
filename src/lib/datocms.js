@@ -12,7 +12,14 @@ const dedupedFetch = async (serializedInit) => {
   return responseBody
 }
 
-export async function performRequest({ query, variables = {}, includeDrafts = false, excludeInvalid = false, visualEditingBaseUrl, revalidate }) {
+export async function performRequest({ 
+  query, 
+  variables = {}, 
+  includeDrafts = false, 
+  excludeInvalid = false,
+  visualEditingBaseUrl, 
+  revalidate 
+}) {
   const body = { query, variables, revalidate }
 
   const { data } = await dedupedFetch(

@@ -3,12 +3,21 @@
   background-color: #fff;
   box-shadow: 0 0 2px #5c5c5c;
   margin: 60px 0 0 0;
+  color: #282728;
 }
 
 .brandContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px;
+}
+
+.navContainer {
+  display: flex;
+  width: 90%;
+  margin: 20px auto;
+  justify-content: space-around;
 }
 
 .brand {
@@ -19,8 +28,9 @@
 }
 
 .brand p {
-  font-family: "Inria Serif", serif;
-  font-weight: 800;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .footerParagraph {
@@ -32,8 +42,8 @@
   color: #000;
 }
 
-.navList {
-  margin: 1rem;
+.footerList {
+  margin: 0 10px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -42,21 +52,37 @@
   font-weight: 500;
 }
 
-.navList li {
-  color: #000;
-}
-
 .terms {
-  padding: 10px;
+  padding: 30px 10px;
   border-top: 1px solid #dddddd;
   text-align: center;
 }
 
-@media (min-width: 600px) {
+.terms a {
+  color: #1759d3;
+  text-decoration: underline;
+}
+
+.terms a:hover {
+  color: #6d99eb;
+}
+
+@media (min-width: 800px) {
   .footerContent {
-    margin: 0 30px;
-    padding: 20px 0;
+    margin: 30px 30px;
     display: flex;
     justify-content: space-evenly;
+  }
+
+  .brandContainer {
+    width: 50%;
+  }
+
+  .navContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    
+    
   }
 }

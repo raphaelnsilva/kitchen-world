@@ -1,4 +1,6 @@
 .navContainer {
+  position: relative;
+  z-index: 1;
   height: 70px;
   width: 100%;
   background-color: #fff;
@@ -19,11 +21,21 @@
 }
 
 .sidebarOpen {
-  color: #000;
-  font-size: 25px;
-  padding: 15px 5px 5px 5px;
+  color: #282728;
+  font-size: 24px;
+  padding: 14px 5px 5px 5px;
   cursor: pointer;
   display: none;
+}
+
+.sidebarOpen:hover {
+  color: #707070;
+  transition: all 0.3s ease;
+}
+
+.logo p:hover {
+  color: #707070;
+  transition: all 0.3s ease;
 }
 
 .logo a {
@@ -50,33 +62,23 @@
 .navLinks li {
   margin: 0 5px;
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .navLinks li a {
   position: relative;
   font-size: 16px;
-  font-weight: 500;
-  color: #000;
+  font-weight: 600;
+  color: #282728;
   text-decoration: none;
   padding: 10px;
 }
 
-.navLinks li a::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background-color: #646464;
-  opacity: 0;
+.navLinks li a:hover {
+  color: #8d8d8d;
+  border-radius: 20px;
   transition: all 0.3s ease;
-}
-
-.navLinks li:hover a::before {
-  opacity: 1;
 }
 
 .searchBox {
@@ -94,10 +96,10 @@
 
 .searchToggle svg {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 15px;
-  color: #000;
-  font-size: 22px;
+  color: #282728;
+  font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -161,7 +163,7 @@
   border-radius: 4px;
   font-size: 14px;
   font-weight: 400;
-  color: #010718;
+  color: #282728;
   background-color: #ffffff;
 }
 
@@ -171,6 +173,11 @@
   right: 15px;
   font-size: 22px;
   cursor: pointer;
+}
+
+.searchToggle svg:hover {
+  color: #707070;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 790px) {
@@ -218,6 +225,11 @@
     cursor: pointer;
   }
 
+  .siderbarClose:hover {
+    color: #8d8d8d;
+    transition: all 0.3s ease;
+  }
+
   .navLinks {
     flex-direction: column;
     padding-top: 30px;
@@ -226,5 +238,75 @@
   .navLinks li a {
     display: block;
     margin-top: 20px;
+  }
+}
+
+/* LISTA DE CATEGORIAS */
+
+.categoryList {
+  display: none;
+}
+
+.categoryList a {
+  color: #fff;
+  margin: 5px 0;
+}
+
+.categoryList a:hover {
+  color: #bbbbbb;
+  transition: all 0.3s ease;
+}
+
+.categoryList.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #6a6c74;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.categoryList::before {
+  content: '';
+  position: absolute;
+  right: 154px;
+  top: 289px;
+  height: 12px;
+  width: 12px;
+  background-color: #6a6c74;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+
+
+@media (min-width: 790px) {
+  .navLinks {
+
+    position: relative;
+  }
+
+  .categoryList.active {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: 170px;
+    width: 195px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    pointer-events: auto;
+  }
+
+  .categoryList::before {
+    right: 90px;
+    top: -6px;
+  }
+
+  .categoryList a:hover {
+    color: #bbbbbb;
+    transition: all 0.3s ease;
   }
 }

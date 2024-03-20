@@ -1,4 +1,4 @@
-.aboutContainer {
+.container {
   width: 90%;
   max-width: 800px;
   margin: auto;
@@ -6,14 +6,25 @@
   color: #282728;
 }
 
-.aboutContainer h1 {
-  font-family: "Frank Ruhl Libre", serif;
-  font-size: 35px;
+.container a {
+  color: #1759d3;
+  text-decoration: underline;
+}
+
+.container a:hover {
+  color: #6d99eb;
+}
+
+.header {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
   text-align: center;
 }
 
-.aboutContainer p {
-  margin: 18px 0;
+.header h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 35px;
 }
 
 /* -------- */

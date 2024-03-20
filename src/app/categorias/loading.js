@@ -1,7 +1,6 @@
 import styles from './page.module.css';
 
 export default function Loading() {
-  // Você pode adicionar qualquer interface dentro de Loading, incluindo um Skeleton.
   return (
     <>
       <div className={styles.skeletonHeader}>

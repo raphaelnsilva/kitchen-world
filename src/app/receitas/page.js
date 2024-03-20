@@ -1,6 +1,5 @@
 import { performRequest } from '../../lib/datocms'
 import styles from './page.module.css'
-// import Card from '../../components/card/card'
 import Link from 'next/link'
 import { Image } from 'react-datocms'
 
@@ -17,12 +16,6 @@ async function getData() {
 
 export default async function Receitas() {
   const articles = await getData()
-
-  // const articles = await new Promise((resolve) => {
-  //   setTimeout(async () => {
-  //     resolve(await getData());
-  //   }, 3000);
-  // });
 
   return (
     <>
