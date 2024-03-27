@@ -25,7 +25,7 @@ export default async function Receitas() {
       </div>
       <div className={styles.section}>
         {articles.map((article) => (
-          <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+          <Link key={article.id} className={styles.cardLink} href={`/receitas/${article.slug}`}>
             <Image data={article.postImage.responsiveImage} />
             <div className={styles.cardContent}>
               <p className={styles.category}>{article.category}</p>
@@ -41,6 +41,7 @@ export default async function Receitas() {
 const POSTS_PAGE = `
   query Query {
     allArticles {
+      id
       slug
       category
       title

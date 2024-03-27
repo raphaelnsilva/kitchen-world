@@ -5,11 +5,15 @@ import { useState, useEffect } from 'react';
 import styles from './cookieBanner.module.css'
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(false);
+  const [cookieConsent, setCookieConsent] = useState(() => {
+    return getLocalStorage('cookie_consent', false);
+  });
   const [showPopup, setShowPopup] = useState(true); 
 
   useEffect(() => {
-    const storedCookieConsent = getLocalStorage("cookie_consent", null)
+    const storedCookieConsent = getLocalStorage("cookie_consent", false)
+    
+    if (storedCookieConsent) setShowPopup(false)
 
     setCookieConsent(storedCookieConsent)
   }, [setCookieConsent])
@@ -19,9 +23,11 @@ export default function CookieBanner() {
     const newValue = cookieConsent ? 'granted' : 'denied'
 
     if (typeof window !== 'undefined' && window.gtag) {
+
       window.gtag("consent", 'update', {
         'analytics_storage': newValue
       });
+
     }
 
     setLocalStorage("cookie_consent", cookieConsent)

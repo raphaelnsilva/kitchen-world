@@ -8,6 +8,15 @@
   line-height: 34px;
 }
 
+.postContainer a {
+  text-decoration: underline;
+  color: #0065c4;
+}
+
+.postContainer a:hover {
+  color: #4094e2;
+}
+
 .postTitle {
   font-size: 28px;
   font-weight: 400;

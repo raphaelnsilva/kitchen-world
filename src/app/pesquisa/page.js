@@ -13,6 +13,7 @@ export default async function Pesquisa({searchParams}) {
   const FILTER_QUERY = `
     query MyQuery {
       allArticles(filter: {title: {matches: {pattern: "${search}"}}}) {
+        id
         slug
         category
         title
@@ -55,7 +56,7 @@ export default async function Pesquisa({searchParams}) {
       ) : (
         <div className={styles.posts}>
           {articles.map((article) => (
-            <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+            <Link key={article.id} className={styles.cardLink} href={`/receitas/${article.slug}`}>
               <Image data={article.postImage.responsiveImage} />
               <div className={styles.cardContent}>
                 <p className={styles.category}>{article.category}</p>

@@ -9,6 +9,7 @@ export default async function Categoria({searchParams}) {
   const CATEGORY_QUERY = `
     query MyQuery {
       allArticles(filter: {category: {eq: "${category}"}}) {
+        id
         slug
         category
         title
@@ -46,7 +47,7 @@ export default async function Categoria({searchParams}) {
       </div>
       <div className={styles.posts}>
         {articles.map((article) => (
-          <Link className={styles.cardLink} href={`/receitas/${article.slug}`}>
+          <Link key={article.id} className={styles.cardLink} href={`/receitas/${article.slug}`}>
             <Image data={article.postImage.responsiveImage} />
             <div className={styles.cardContent}>
               <p className={styles.category}>{article.category}</p>

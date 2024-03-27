@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import styles from './navigation.module.css'
 import { IoSearch, IoCloseSharp } from "react-icons/io5";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -13,6 +13,7 @@ export default function Navigation() {
   const [searchQuery, setSearchQuery] = useState('')
   const [categoryList, setCategoryList] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,7 +25,7 @@ export default function Navigation() {
 
   useEffect(() => {
     if (!searchQuery) {
-      router.push('/')
+      router.push(pathname)
     } else {
       router.push(`/pesquisa?query=${searchQuery}`)
     }
